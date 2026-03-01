@@ -1,0 +1,19 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "EcoTrade is a decentralized energy trading platform designed to convert a standard power grid into a **Circular Economy**. It allows small-scale renewable energy producers (like solar rooftop owners or campus blocks) to list excess energy and sell it directly to consumers or investors.",
+  "main": "AddListing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.3"
+  }
+}
