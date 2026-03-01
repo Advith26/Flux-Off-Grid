@@ -1,30 +1,46 @@
-Technical Documentation and File Operations
+FLUX: DECENTRALIZED CAMPUS ENERGY PROTOCOL
 
-The Flux project is architected as a decentralized energy trading protocol. The system operations are distributed across the following core files to ensure technical implementation, sustainability measurement, and financial viability.
+Flux is a high-frequency trading protocol designed for micro-grid energy exchange. It provides the financial and data layer for campus-wide renewable energy distribution, bypassing traditional utility bottlenecks to empower local communities.
 
-1. App.js (Core Logic and State)
+CORE FILE OPERATIONS
 
-This is the primary file containing the React functional component that manages the application lifecycle and peer-to-peer logic.
+App.js: Logic and State Management
 
-State Management: Utilizes React Hooks to manage user roles (Producer, Consumer, Investor) and synchronized data arrays.
-Persistent Storage**: Implements a LocalStorage backup system to maintain session data and transaction history during network instability.
-Database Integration: Connects to a Supabase PostgreSQL cloud ledger for real-time data persistence and multi-node synchronization.
-Smart Contract Simulation: Contains the `handlePurchase` function which executes a 2% platform transaction fee, generates a unique cryptographic `TxHash`, and updates the global energy ledger.
-Impact Calculations: Dynamically computes $CO_2$ reduction metrics and financial ROI based on the volume of energy traded through the protocol.
+ State Management: Leverages React Hooks to maintain synchronized data arrays and manage distinct user permissions for Producers, Consumers, and Investors.
+ Persistent Storage: Integrates a LocalStorage backup system to safeguard session data and transaction logs against network instability.
+ Database Integration: Establishes a live connection to a Supabase PostgreSQL cloud ledger for real-time persistence.
+ Smart Contract Simulation: Executes the `handlePurchase` function, which automates a 2% platform transaction fee and generates unique cryptographic `TxHash` identifiers.
+ Impact Calculations: Provides real-time computation of $CO_2$ reduction metrics and financial ROI (14.2% Producer APY).
 
-2. App.css (Interface Architecture)
+App.css: Interface Architecture
 
-This file defines the visual framework and interactive feedback systems of the protocol.
+ Glassmorphism UI: Utilizes advanced CSS for high-fidelity visual effects, including background saturation and translucent card structures.
+ Interactive Feedback: Configures terminal animations for visual confirmation of cryptographic handshakes during trades.
+ Responsive Topology: Controls the grid-based scatter-math logic for node markers on the live map view.
 
-Glassmorphism UI: Implements high-fidelity visual effects including background blurs and translucent card layouts for a professional financial dashboard.
-Interactive Feedback: Contains the CSS animations for the Smart Contract Terminal, providing real-time visual confirmation of cryptographic handshakes.
-Responsive Layouts: Manages the grid-based node topology and the scatter-math positioning for the live map view.
+INITIALIZATION SEQUENCE
 
-3. README.md (System Specification)
+To deploy the Flux environment and establish the full-stack connection, follow these steps:
 
-This document serves as the technical overview and deployment guide for the repository.
+1. Backend Server Initialization
 
-Project Definition: Outlines the system as a high-frequency trading protocol for micro-grid energy exchange.
-Technical Stack: Documents the use of React.js, Supabase, and PostgreSQL.
-Operational Metrics: Explicitly details the business model (2% transaction fee) and the environmental quantification methods (kg $CO_2$ offset).
-Peer Communication: Provides instructions for local environment setup and dependency installation.
+ Navigate to the server directory: `cd hackathon/server`
+ Install dependencies: `npm install`
+ Launch API: `node server.js`
+
+2. Client-Side Initialization (Frontend)
+
+ Navigate to the client directory: `cd hackathon/client`
+ Install dependencies: `npm install`
+ Launch Development Server: `npm start`
+
+3. Cloud Backend Activation (PostgreSQL)
+
+ Environment Configuration: Ensure the `.env` file in the client folder contains valid `REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY`.
+ Database Permission: Access the Supabase SQL Editor and execute: `alter table listings disable row level security;`.
+
+SYSTEM SPECIFICATIONS
+
+ Project Definition: High-frequency trading protocol for micro-grid energy exchange.
+ Technical Stack: React.js, Supabase, and PostgreSQL.
+ Operational Metrics: 2% transaction fee and dynamic carbon offset quantification.
